@@ -116,7 +116,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 38400
+#define BAUDRATE 19200
 #define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate
 
 /**
@@ -140,7 +140,7 @@
 
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
-  #define MOTHERBOARD BOARD_RAMPS_14_EEF
+  #define MOTHERBOARD BOARD_RAMPS_14_EFB
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
@@ -164,7 +164,7 @@
  *
  * :[3, 4, 5, 6]
  */
-//#define LINEAR_AXES 3
+#define LINEAR_AXES 5
 
 /**
  * Axis codes for additional axes:
@@ -193,7 +193,7 @@
 
 // This defines the number of extruders
 // :[0, 1, 2, 3, 4, 5, 6, 7, 8]
-#define EXTRUDERS 2
+#define EXTRUDERS 0
 
 // Generally expected filament diameter (1.75, 2.85, 3.0, ...). Used for Volumetric, Filament Width Sensor, etc.
 #define DEFAULT_NOMINAL_FILAMENT_DIA 1.75
@@ -484,7 +484,7 @@
  *
  */
 #define TEMP_SENSOR_0 1
-#define TEMP_SENSOR_1 1
+#define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
 #define TEMP_SENSOR_4 0
@@ -771,8 +771,8 @@
 #define USE_XMIN_PLUG
 #define USE_YMIN_PLUG
 #define USE_ZMIN_PLUG
-//#define USE_IMIN_PLUG
-//#define USE_JMIN_PLUG
+#define USE_IMIN_PLUG
+#define USE_JMIN_PLUG
 //#define USE_KMIN_PLUG
 //#define USE_XMAX_PLUG
 //#define USE_YMAX_PLUG
@@ -820,9 +820,9 @@
 #endif
 
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
-#define X_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Y_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+#define X_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
+#define Y_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
+#define Z_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
 #define I_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define J_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define K_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
@@ -860,11 +860,11 @@
 //#define Z2_DRIVER_TYPE A4988
 //#define Z3_DRIVER_TYPE A4988
 //#define Z4_DRIVER_TYPE A4988
-//#define I_DRIVER_TYPE  A4988
-//#define J_DRIVER_TYPE  A4988
+#define I_DRIVER_TYPE  DRV8825
+#define J_DRIVER_TYPE  A4988
 //#define K_DRIVER_TYPE  A4988
-#define E0_DRIVER_TYPE DRV8825
-#define E1_DRIVER_TYPE DRV8825
+/* #define E0_DRIVER_TYPE DRV8825 */
+/* #define E1_DRIVER_TYPE DRV8825 */
 //#define E2_DRIVER_TYPE A4988
 //#define E3_DRIVER_TYPE A4988
 //#define E4_DRIVER_TYPE A4988
@@ -918,18 +918,18 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 8000, 8000, 5120, 6400 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 8000, 8000, 5120, 6400, 6400 }
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 100, 100, 100, 100 }
+#define DEFAULT_MAX_FEEDRATE          { 100, 100, 100, 100, 100 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
-  #define MAX_FEEDRATE_EDIT_VALUES    { 600, 600, 10, 50 } // ...or, set your own edit limits
+  #define MAX_FEEDRATE_EDIT_VALUES    { 600, 600, 10, 50, 50 } // ...or, set your own edit limits
 #endif
 
 /**
@@ -938,11 +938,11 @@
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 3000, 3000 }
+#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 3000, 3000, 3000 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
-  #define MAX_ACCEL_EDIT_VALUES       { 6000, 6000, 200, 20000 } // ...or, set your own edit limits
+  #define MAX_ACCEL_EDIT_VALUES       { 6000, 6000, 200, 20000, 20000 } // ...or, set your own edit limits
 #endif
 
 /**
@@ -1288,8 +1288,8 @@
 #define Y_ENABLE_ON 0
 #define Z_ENABLE_ON 0
 #define E_ENABLE_ON 0 // For all extruders
-//#define I_ENABLE_ON 0
-//#define J_ENABLE_ON 0
+#define I_ENABLE_ON 0
+#define J_ENABLE_ON 0
 //#define K_ENABLE_ON 0
 
 // Disable axis steppers immediately when they're not being stepped.
@@ -1297,8 +1297,8 @@
 #define DISABLE_X false
 #define DISABLE_Y false
 #define DISABLE_Z false
-//#define DISABLE_I false
-//#define DISABLE_J false
+#define DISABLE_I false
+/* #define DISABLE_J false */
 //#define DISABLE_K false
 
 // Turn off the display blinking that warns about possible accuracy reduction
@@ -1315,8 +1315,8 @@
 #define INVERT_X_DIR false
 #define INVERT_Y_DIR true
 #define INVERT_Z_DIR false
-//#define INVERT_I_DIR false
-//#define INVERT_J_DIR false
+#define INVERT_I_DIR false
+/* #define INVERT_J_DIR false */
 //#define INVERT_K_DIR false
 
 // @section extruder
@@ -1353,8 +1353,8 @@
 #define X_HOME_DIR -1
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR -1
-//#define I_HOME_DIR -1
-//#define J_HOME_DIR -1
+#define I_HOME_DIR -1
+#define J_HOME_DIR -1
 //#define K_HOME_DIR -1
 
 // @section machine
@@ -1370,10 +1370,10 @@
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
 #define Z_MAX_POS 200
-//#define I_MIN_POS 0
-//#define I_MAX_POS 50
-//#define J_MIN_POS 0
-//#define J_MAX_POS 50
+#define I_MIN_POS 0
+#define I_MAX_POS 50
+#define J_MIN_POS 0
+#define J_MAX_POS 50
 //#define K_MIN_POS 0
 //#define K_MAX_POS 50
 
@@ -1736,7 +1736,7 @@
 #endif
 
 // Homing speeds (mm/min)
-#define HOMING_FEEDRATE_MM_M { 80, 80, 80 }
+#define HOMING_FEEDRATE_MM_M { 80, 80, 80, 80, 80 }
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
