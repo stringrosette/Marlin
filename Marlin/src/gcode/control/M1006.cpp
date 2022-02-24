@@ -19,16 +19,16 @@ void GcodeSuite::M1006()
     int val;
     if (sensor == 1)
     {
-        pinMode(SERVO0_PIN, INPUT);
-        extDigitalWrite(SERVO0_PIN, HIGH);
-        val = extDigitalRead(SERVO0_PIN);
+        pinMode(I_MIN_PIN, INPUT);
+        extDigitalWrite(I_MIN_PIN, HIGH);
+        val = extDigitalRead(I_MIN_PIN);
     };
 
     if (sensor == 2)
     {
-        pinMode(SERVO2_PIN, INPUT);
-        extDigitalWrite(SERVO2_PIN, HIGH);
-        val = extDigitalRead(SERVO2_PIN);
+        pinMode(J_MIN_PIN, INPUT);
+        extDigitalWrite(J_MIN_PIN, HIGH);
+        val = extDigitalRead(J_MIN_PIN);
     }
     SERIAL_DECIMAL(val);
     SERIAL_EOL();
