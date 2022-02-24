@@ -825,14 +825,14 @@
 #define Z_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
 #define I_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define J_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define K_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define X_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Y_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Z_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define I_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define J_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define K_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Z_MIN_PROBE_ENDSTOP_INVERTING false // Set to true to invert the logic of the probe.
+/* #define K_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop. */
+/* #define X_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop. */
+/* #define Y_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop. */
+/* #define Z_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop. */
+/* #define I_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop. */
+/* #define J_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop. */
+/* #define K_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop. */
+/* #define Z_MIN_PROBE_ENDSTOP_INVERTING false // Set to true to invert the logic of the probe. */
 
 /**
  * Stepper Drivers
@@ -861,7 +861,7 @@
 //#define Z3_DRIVER_TYPE A4988
 //#define Z4_DRIVER_TYPE A4988
 #define I_DRIVER_TYPE  DRV8825
-#define J_DRIVER_TYPE  A4988
+#define J_DRIVER_TYPE  DRV8825
 //#define K_DRIVER_TYPE  A4988
 /* #define E0_DRIVER_TYPE DRV8825 */
 /* #define E1_DRIVER_TYPE DRV8825 */
@@ -1287,7 +1287,7 @@
 #define X_ENABLE_ON 0
 #define Y_ENABLE_ON 0
 #define Z_ENABLE_ON 0
-#define E_ENABLE_ON 0 // For all extruders
+/* #define E_ENABLE_ON 0 // For all extruders */
 #define I_ENABLE_ON 0
 #define J_ENABLE_ON 0
 //#define K_ENABLE_ON 0
@@ -1298,7 +1298,7 @@
 #define DISABLE_Y false
 #define DISABLE_Z false
 #define DISABLE_I false
-/* #define DISABLE_J false */
+#define DISABLE_J false
 //#define DISABLE_K false
 
 // Turn off the display blinking that warns about possible accuracy reduction
@@ -1316,7 +1316,7 @@
 #define INVERT_Y_DIR true
 #define INVERT_Z_DIR false
 #define INVERT_I_DIR false
-/* #define INVERT_J_DIR false */
+#define INVERT_J_DIR false
 //#define INVERT_K_DIR false
 
 // @section extruder
@@ -1736,7 +1736,7 @@
 #endif
 
 // Homing speeds (mm/min)
-#define HOMING_FEEDRATE_MM_M { 80, 80, 80, 80, 80 }
+#define HOMING_FEEDRATE_MM_M { 80, 80, 80, 15, 15 }
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS

@@ -86,7 +86,7 @@
     #define X_MIN_PIN                          3
   #endif
   #ifndef X_MAX_PIN
-    #define X_MAX_PIN                          2
+    #define X_MAX_PIN                         -1
   #endif
 #endif
 #ifndef Y_STOP_PIN
@@ -94,7 +94,7 @@
     #define Y_MIN_PIN                         14
   #endif
   #ifndef Y_MAX_PIN
-    #define Y_MAX_PIN                         15
+    #define Y_MAX_PIN                         -1
   #endif
 #endif
 #ifndef Z_STOP_PIN
@@ -102,13 +102,13 @@
     #define Z_MIN_PIN                         18
   #endif
   #ifndef Z_MAX_PIN
-    #define Z_MAX_PIN                         19
+    #define Z_MAX_PIN                         -1
   #endif
 #endif
 
 #ifndef I_STOP_PIN
   #ifndef I_MIN_PIN
-    #define I_MIN_PIN                         -1
+    #define I_MIN_PIN                          2
   #endif
   #ifndef I_MAX_PIN
     #define I_MAX_PIN                         -1
@@ -117,7 +117,7 @@
 
 #ifndef J_STOP_PIN
   #ifndef J_MIN_PIN
-    #define J_MIN_PIN                         -1
+    #define J_MIN_PIN                         15
   #endif
   #ifndef J_MAX_PIN
     #define J_MAX_PIN                         -1
