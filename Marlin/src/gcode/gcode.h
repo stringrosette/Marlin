@@ -1125,6 +1125,7 @@ private:
   static void T(const int8_t tool_index);
 
   static void M1006();
+  static void M1007();
 };
 
 extern GcodeSuite gcode;

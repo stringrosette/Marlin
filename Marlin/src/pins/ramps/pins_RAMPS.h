@@ -466,6 +466,14 @@
 // Aux 4 D16 D17 D23 D25 D27 D29 D31 D33 D35 D37 D39 D41 D43 D45 D47 D32 GND 5V
 //
 
+
+/* #if ENABLED(ENABLE_CUSTOM_GCODE) */
+/*   #define RELAY1_PIN    43 */
+/*   #define RELAY2_PIN    45 */
+/*   #define RELAY3_PIN    47 */
+/*   #define RELAY4_PIN    32 */
+/* #endif */
+
 /**
  * LCD adapter. Please note: These comes in two variants. The socket keys can be
  * on either side, and may be backwards on some boards / displays.

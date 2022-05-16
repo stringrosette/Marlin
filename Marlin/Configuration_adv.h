@@ -2578,7 +2578,7 @@
   #if AXIS_IS_TMC(Y)
     #define Y_CURRENT       800
     #define Y_CURRENT_HOME  Y_CURRENT
-    #define Y_MICROSTEPS    32
+    #define Y_MICROSTEPS    16
     #define Y_RSENSE          0.11
     #define Y_CHAIN_POS      -1
     //#define Y_INTERPOLATE  true
@@ -2596,7 +2596,7 @@
   #if AXIS_IS_TMC(Z)
     #define Z_CURRENT       800
     #define Z_CURRENT_HOME  Z_CURRENT
-    #define Z_MICROSTEPS     32
+    #define Z_MICROSTEPS     16
     #define Z_RSENSE          0.11
     #define Z_CHAIN_POS      -1
     //#define Z_INTERPOLATE  true
@@ -2920,7 +2920,7 @@
     /* #define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY */
     #define Y_STALL_SENSITIVITY  15
     /* #define Y2_STALL_SENSITIVITY Y_STALL_SENSITIVITY */
-    #define Z_STALL_SENSITIVITY  16
+    #define Z_STALL_SENSITIVITY  13
     //#define Z2_STALL_SENSITIVITY Z_STALL_SENSITIVITY
     //#define Z3_STALL_SENSITIVITY Z_STALL_SENSITIVITY
     //#define Z4_STALL_SENSITIVITY Z_STALL_SENSITIVITY

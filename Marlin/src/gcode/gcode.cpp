@@ -1020,6 +1020,11 @@ void GcodeSuite::process_parsed_command(const bool no_ok/*=false*/) {
           M1006();
           break;
       #endif
+      #if ENABLED(ENABLE_CUSTOM_GCODE)
+        case 1007:
+          M1007();
+          break;
+      #endif
       default: parser.unknown_command_warning(); break;
     }
     break;
